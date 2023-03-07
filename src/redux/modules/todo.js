@@ -53,7 +53,7 @@ const todos = (state = initialState, action)=> {
     case ADDTODO : 
     const max= state.length-1
     const maxId = state[max]
-    const id = Number(maxId.id) + 1
+    const id = maxId.id + 1
     const newTodo = {
       id: id,
       title: action.payload.title,
