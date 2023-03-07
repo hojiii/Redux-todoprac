@@ -51,8 +51,11 @@ export const fixTodo = (payload, updates) => {
 const todos = (state = initialState, action)=> {
   switch(action.type){
     case ADDTODO : 
+    const max= state.length-1
+    const maxId = state[max]
+    const id = maxId.id
     const newTodo = {
-      id: Math.random(),
+      id: id,
       title: action.payload.title,
       body: action.payload.body,
       isDone: false
@@ -86,3 +89,4 @@ const todos = (state = initialState, action)=> {
 }
 };
 export default todos;
+
